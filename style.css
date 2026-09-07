@@ -31,7 +31,7 @@ h1, h2, h3 { line-height: 1.2; }
 nav { display: flex; align-items: center; gap: 2rem; }
 nav a { font-size: .95rem; font-weight: 600; text-decoration: none; }
 nav a:hover { color: var(--accent); text-decoration: underline; }
-.hero { background: var(--brown); color: car(--paper); }
+.hero { background: var(--brown); color: var(--paper); }
 .hero-inner { padding-block: 3.6rem 3.2rem; }
 .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .hero .eyebrow { color: var(--gold); margin-bottom: 1.25rem; }
