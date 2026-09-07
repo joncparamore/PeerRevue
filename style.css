@@ -1,8 +1,8 @@
 /* PeerRevue: change these tokens to customize the whole site. */
 :root {
-  --ink: #3F160C;
+  --ink: #172b35;
   --muted: #52656e;
-  --brown: #3F160C;
+  --navy: #3F160C;
   --accent: #006e78;
   --mint: #b6eedc;
   --paper: #ffffff;
@@ -31,7 +31,7 @@ h1, h2, h3 { line-height: 1.2; }
 nav { display: flex; align-items: center; gap: 2rem; }
 nav a { font-size: .95rem; font-weight: 600; text-decoration: none; }
 nav a:hover { color: var(--accent); text-decoration: underline; }
-.hero { background: var(--brown); color: white; }
+.hero { background: var(--navy); color: white; }
 .hero-inner { padding-block: 3.6rem 3.2rem; }
 .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .hero .eyebrow { color: var(--mint); margin-bottom: 1.25rem; }
@@ -40,7 +40,7 @@ h1 em { font-weight: normal; color: var(--mint); }
 .hero-bottom { margin-top: 2rem; display: flex; justify-content: space-between; align-items: end; gap: 2rem; }
 .hero-bottom p { color: #d5e3e8; font-size: 1.05rem; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 2.5rem; padding: .9rem 1.3rem; border-radius: 4px; font-weight: 650; text-decoration: none; transition: background .15s; }
-.button-light { background: var(--mint); color: var(--brown); }
+.button-light { background: var(--mint); color: var(--navy); }
 .button-light:hover { background: white; }
 .button-light:focus-visible { outline-color: white; }
 .content-layout { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 3rem; padding-block: 3.5rem 4rem; }
