@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PeerRevue — a place to track your reading, share thoughtful research summaries, and discover what others are reading.">
+  <title>PeerRevue — Read. Share. Discover.</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="{% url 'home' %}" aria-label="PeerRevue home">Peer<span>Revue</span><span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#discover">Discover</a>
+        <a href="#about">About</a>
+
+        {% if user.is_authenticated %}
+          <a href="{% url 'reading_list' %}">My Reading List</a>
+
+          <form method="post" action="{% url 'logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}">Log in</a>
+          <a href="{% url 'signup' %}">Create account</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- The banner and sample content can be edited directly in this file. -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <p class="eyebrow">Your research library, connected to a community of scholars.</p>
+        <h1 id="hero-heading">Read. Share. <em>Discover.</em></h1>
+        <!--<div class="hero-bottom">
+          <a class="button button-light" href="#discover">Explore the research <span aria-hidden="true">↗</span></a>
+        </div> -->
+      </div>
+    </section>
+
+    <div class="container content-layout">
+      <section class="research-feed" id="discover" aria-labelledby="discover-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">From the community</p><h2 id="discover-heading">A closer look at research.</h2></div>
+          <span class="sample-label">Sample content</span>
+        </div>
+        <p class="section-intro">Good research starts a conversation. See what others are taking away from their reading.</p>
+
+        <!-- Illustrative entries, not real papers or user reviews. Replace with your own content. -->
+        <article class="paper-card">
+          <div class="paper-top"><span class="topic">Cognitive science</span><span class="entry-type">Reading note</span></div>
+          <h3>How does experience shape the way we hear speech?</h3>
+          <p class="paper-description">An example discussion of memory, speech perception, and the traces that familiar voices leave behind.</p>
+          <div class="takeaway"><p class="small-label">The takeaway</p><p>We may remember more than the words themselves. The voice and context could become part of what we learn.</p></div>
+          <details><summary>Read the full note</summary><div class="expanded-note"><p>This sample shows where a reader’s summary and interpretation would appear. A useful note distinguishes the paper’s findings from the reader’s own conclusions.</p><p><strong>A question to carry forward:</strong> How would we distinguish an effect of familiarity from an effect of social expectations?</p></div></details>
+        </article>
+
+        <article class="paper-card">
+          <div class="paper-top"><span class="topic">Research methods</span><span class="entry-type">Reading note</span></div>
+          <h3>What can a model tell us about human learning?</h3>
+          <p class="paper-description">An example discussion of computational explanations and the assumptions that make them work.</p>
+          <div class="takeaway"><p class="small-label">The takeaway</p><p>A model can clarify an explanation by making its assumptions explicit—and showing where those assumptions fall short.</p></div>
+          <details><summary>Read the full note</summary><div class="expanded-note"><p>Use this space to describe the research question, approach, main result, and limitations in your own words.</p><p><strong>A question to carry forward:</strong> What new observation would help distinguish this account from competing explanations?</p></div></details>
+        </article>
+      </section>
+
+      <aside class="sidebar">
+        <section class="reading-panel" id="reading-list" aria-labelledby="reading-heading">
+          <p class="eyebrow">Make room for your next idea</p>
+          <h2 id="reading-heading">Your reading shelf.</h2>
+          <p>A home for the papers you want to read—and the ideas you want to keep.</p>
+          <ol class="shelf-list">
+            <li><span class="shelf-number">01</span><div><h3>Want to read</h3><p>Keep your next discovery close.</p></div></li>
+            <li><span class="shelf-number">02</span><div><h3>Currently reading</h3><p>Stay with the questions that matter.</p></div></li>
+            <li><span class="shelf-number">03</span><div><h3>Read &amp; reflected</h3><p>Save what you took away.</p></div></li>
+          </ol>
+          <p class="preview-note">Reading lists and accounts are coming soon.</p>
+        </section>
+        <section class="about-panel" id="about" aria-labelledby="about-heading">
+          <p class="eyebrow">Why PeerRevue?</p>
+          <h2 id="about-heading">Research is better<br>in conversation.</h2>
+          <p>For researchers, students, and curious readers: a place to organize your reading, write thoughtful summaries, and find out what others think.</p>
+          <p class="about-footnote">Reader perspectives complement formal peer review.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <a class="wordmark" href="index.html">Peer<span>Revue</span><span class="brand-dot">.</span></a>
+    <p>Read with curiosity. Share with care.</p>
+    <span>Early preview</span>
+  </footer>
+</body>
+</html>
